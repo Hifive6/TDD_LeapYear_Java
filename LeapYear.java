@@ -1,10 +1,26 @@
+import java.util.Scanner;
+
 public class LeapYear {
 
     public static void main(String[] args) {
-        
+        Scanner scan = new Scanner(System.in);
+        System.out.println("What year is a Leap Year");
+        System.out.print("Please enter a Year:  ");
+        int userYear = scan.nextInt();
+
+        boolean leapYear = isYearALeapYear(userYear);
+
+        if(leapYear){
+            System.out.println(userYear + " is a leap year!!");
+        } else {
+            System.out.println(userYear + " is not a leap year.");
+        }
+
+        scan.close();
+
     }
 
-    public boolean isYearALeapYear(int year){
+    public static boolean isYearALeapYear(int year) {
        if(isDivisibleBy4(year)){
            if(isDivisibleBy100(year)){
                if(isDivisibleBy400(year)){
@@ -12,7 +28,7 @@ public class LeapYear {
                } else {
                    return false;
                }
-           } else{
+           } else {
               return true;
            }
        } else {
@@ -23,15 +39,15 @@ public class LeapYear {
 
 
 
-    public boolean isDivisibleBy4(int year){
+    public static boolean isDivisibleBy4(int year){
         return year % 4 == 0;
     }
 
-    public boolean isDivisibleBy100(int year){
+    public static boolean isDivisibleBy100(int year){
         return year % 100 == 0;
     }
 
-    public boolean isDivisibleBy400(int year){
+    public static boolean isDivisibleBy400(int year){
         return year % 400 == 0;
     }
 }
