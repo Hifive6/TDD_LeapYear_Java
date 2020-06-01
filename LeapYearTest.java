@@ -28,5 +28,7 @@ public class LeapYearTest {
     public final void isYearGivenALeapYear(){
         LeapYear leap = new LeapYear();
         Assert.assertEquals(true, leap.isYearALeapYear(1996));
+        Assert.assertEquals(false, leap.isYearALeapYear(1900));
+        Assert.assertEquals(true, leap.isYearALeapYear(2000));
     }
 }

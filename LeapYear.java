@@ -5,11 +5,23 @@ public class LeapYear {
     }
 
     public boolean isYearALeapYear(int year){
-        if(isDivisibleBy4(year)){
-            return true;
-        }
-        return false;
+       if(isDivisibleBy4(year)){
+           if(isDivisibleBy100(year)){
+               if(isDivisibleBy400(year)){
+                    return true;
+               } else {
+                   return false;
+               }
+           } else{
+              return true;
+           }
+       } else {
+           return false;
+       }
     }
+
+
+
 
     public boolean isDivisibleBy4(int year){
         return year % 4 == 0;
