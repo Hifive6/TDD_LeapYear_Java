@@ -1,6 +1,6 @@
 public class LeapYear {
 
-    public int isDivisibleBy4(int number){
-        return number / 4;
+    public boolean isDivisibleBy4(int number){
+        return number % 4 == 0;
     }
 }
